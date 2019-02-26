@@ -34,23 +34,38 @@ let buttonEditRed = document.getElementsByClassName("btn-group")[0];
          redButton.target.style.color = 'red';}
          else {
              console.log(buttonEditRed);
-         }
+        }
  }
  , false);
 
 /////////////////////////////Function 4/////////////////////////////
 
-let buttonEditGreen = document.getElementsByClassName("btn btn-sm btn-outline-secondary")[2];
-
-console.log(buttonEditGreen);
-
-buttonEditGreen.addEventListener('click', function (greenButton){
-    if (greenButton.style.color === 'green'){ 
-        greenButton.style.color = '' ;}
-        else{
-            console.log(buttonEditGreen);
-        }
-}
-,false);
+document.getElementsByClassName("col-md-4")[1].addEventListener("click", function(event){
+      
+    if (event.target.className == "btn btn-sm btn-outline-secondary" && 
+        document.getElementsByClassName("card-text")[1].style.color == "green"){
+      
+      document.getElementsByClassName("card-text")[1].style.color = null;
+    }
+        
+    else if (event.target.className == "btn btn-sm btn-outline-secondary"){
+            
+      document.getElementsByClassName("card-text")[1].style.color = "green"
+                
+    };
+});
 
 /////////////////////////////Function 5/////////////////////////////
+
+document.querySelector("header").addEventListener("dblclick",psy);
+
+console.log(psy.detail)
+
+function psy(){
+    document.querySelector("head").childNodes[3].setAttribute("href", "");
+    setTimeout(returnNormaly, 5000)
+}
+
+function returnNormaly(){
+    document.querySelector("head").childNodes[3].setAttribute("href", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"); 
+}
